@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    {{!-- <link rel="stylesheet" href="home.css"> --}}
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/home/carousel.css">
     <link rel="stylesheet" href="css/home/index.css">
-    <link rel="stylesheet" href="css/home/contactUs.css">
+    <link rel="stylesheet" href="css/home/contact.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -78,17 +77,20 @@
         <div class="cards">
             <img class="person_img" src="image/index/card/life.png" alt="Volunteer_image">
             <p>Financial Support</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, sed quidem! Officia eius temporibus rerum architecto, ea vero ut tenetur ipsa dolore, doloribus omnis ullam.</p>
             <button>Read More</button>            
             
         </div>
         <div class="cards">
             <img class="person_img"  src="image/index/card/donate.png" alt="Volunteer_image">
             <p>Foods and Medicines</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, sed quidem! Officia eius temporibus rerum architecto, ea vero ut tenetur ipsa dolore, doloribus omnis ullam.</p>
             <button>Read More</button>
         </div>
         <div class="cards">
             <img class="person_img"  src="image/index/card/donate clothes.jpg" alt="Volunteer_image">
             <p>Donation of Cloths</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, sed quidem! Officia eius temporibus rerum architecto, ea vero ut tenetur ipsa dolore, doloribus omnis ullam.</p>
             <button>Read More</button>
         </div>
     </div>
@@ -115,57 +117,19 @@
     </div>
 
     <!-- Our founder  -->
-    <div class="our-founder">
-      <div class="founder">
-          <img class="person_img" src="image/index/person.jpg" alt="Volunteer_image">
-          <p class="name">Name of Volunteer</p>
-          <p>We are a not-for-profit organisation that builds capacity of communities to ensure empowerment for marginalised women and girls. Our sustainable and holistic interventions in Health, Livelihood, Education and Disaster Relief & Resilience, provide innovative solutions to deep-rooted development problems. Our work has become even more urgent and necessary, as millions of people around the country are battling Covid-19. our NGO has been responding promptly to the pandemic with the support of its domestic and international donors, working closely with state governments & local administrations to support marginalised communities</p>
-          <p class="name" >Connect with him</p>
-          <a href="#" target="_blank"> <img class="social_platform" src="image/index/social/facebook.png" alt="facebook"></a>
-          <a href="#" target="_blank"> <img class="social_platform" src="image/index/social/twitter.png" alt="twitter"></a>
-          <a href="#" target="_blank"><img class="social_platform" src="image/index/social/instagram.png" alt="face"></a>
-          <a href="#" target="_blank"><img class="social_platform" src="image/index/social/linkedin.png" alt="link"></a>
-      </div>
+    <div class="founder">
+        <img class="person_img" src="image/index/person.jpg" alt="Volunteer_image">
+        <p class="name">Name of Volunteer</p>
+        <p>We are a not-for-profit organisation that builds capacity of communities to ensure empowerment for marginalised women and girls. Our sustainable and holistic interventions in Health, Livelihood, Education and Disaster Relief & Resilience, provide innovative solutions to deep-rooted development problems. Our work has become even more urgent and necessary, as millions of people around the country are battling Covid-19. our NGO has been responding promptly to the pandemic with the support of its domestic and international donors, working closely with state governments & local administrations to support marginalised communities</p>
+        <p class="name" >Connect with him</p>
+        <a href="#" target="_blank"> <img class="social_platform" src="image/index/social/facebook.png" alt="facebook"></a>
+        <a href="#" target="_blank"> <img class="social_platform" src="image/index/social/twitter.png" alt="twitter"></a>
+        <a href="#" target="_blank"><img class="social_platform" src="image/index/social/instagram.png" alt="face"></a>
+        <a href="#" target="_blank"><img class="social_platform" src="image/index/social/linkedin.png" alt="link"></a>
     </div>
 
     <!-- contact-us -->
-    <div class="contact-us">
-
-      <div class="wrapper">
-        <p>Send us a Message</p>
-        <form action="#">
-          <div class="dbl-field">
-            <div class="field">
-              <input type="text" name="name" placeholder="Enter your name">
-              <i class='fas fa-user'></i>
-            </div>
-            <div class="field">
-              <input type="text" name="email" placeholder="Enter your email">
-              <i class='fas fa-envelope'></i>
-            </div>
-          </div>
-          <div class="dbl-field">
-            <div class="field">
-              <input type="text" name="phone" placeholder="Enter your phone">
-              <i class='fas fa-phone-alt'></i>
-            </div>
-            <div class="field">
-              <input type="text" name="website" placeholder="Enter your website">
-              <i class='fas fa-globe'></i>
-            </div>
-          </div>
-          <div class="message">
-            <textarea placeholder="Write your message" name="message"></textarea>
-            <i class="material-icons"></i>
-          </div>
-          <div class="button-area">
-            <button type="submit">Send Message</button>
-            <span></span>
-          </div>
-        </form>
-      </div>
-
-    </div>
+    {{>contact}}
 
 
 

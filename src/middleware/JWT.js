@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const cookie = require('cookie-parser');
-const User = require("./models/signup");
+const User = require("../models/signup");
 
 // const loginrequired = async (req,res,next) => {
 //     const token = req.cookie['access-token']
@@ -24,7 +24,8 @@ const verifyEmail = async(req, res,  next) => {
     try {
         const user = await User.findOne({ email : req.body.email});
         if(user.isVerified) {
-            next()
+            console.log(user);
+            next();
         }
         else {
             console.log("Please check your email to verify your account");

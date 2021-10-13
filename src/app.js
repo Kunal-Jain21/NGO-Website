@@ -3,13 +3,13 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const hbs = require("hbs");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 
 require("./db/conn");
 const User = require("./models/signup");
-const { verifyEmail } = require('./JWT');
+const {verifyEmail} = require("./middleware/JWT")
 
 const port = process.env.PORT || 3000;
 
@@ -45,31 +45,31 @@ app.get("/volunteer", (req, res) => {
     res.render("volunteer");
 })
 
+app.get("/admin", (req, res) => {
+    res.render("admin");
+})
+
 // login check
-app.post("/index", async(req,res) => {
+app.post("/index",verifyEmail, async(req,res) => {
     try {
-        const email  = req.body.email;
+        const email = req.body.email;
         const password = req.body.password;
-        const findUser = await User.findOne({email:email});
 
-        const isMatch = await bcrypt.compare(password, findUser.password);
+        const useremail = await User.findOne({email:email});
+
+        const isMatch = await bcrypt.compare(password, useremail.password);
+
+        const token = await useremail.generateAuthUser();
+        console.log("The token part is " + token);
+
         if(isMatch) {
-            // console.log(isMatch);
-            // const token = await findUser.generateAuthUser();
-            // console.log("The token part is " + token);
-            // res.cookie("access-token", token, {
-            //     httpOnly:true
-            // });
-
-
             res.status(201).render("index");
-        }
-        else {
-            console.log('Invalid Credential');
+        }else {
+            res.send("Invalid credentials")
         }
         
     } catch (error) {
-        res.status(400).send(Error);
+        res.status(400).send("Error");
     }
 })
 
@@ -94,11 +94,11 @@ var transporter = nodemailer.createTransport({
 // create new user
 app.post("/login", async(req,res) => {
     try {
-        const{email, password, cpassword} = req.body;
-        // const password = req.body.password;
-        // const cpassword = req.body.cpassword;
+        const email = req.body.email;
+        const password = req.body.password;
+        const cpassword = req.body.cpassword;
         if(password === cpassword) {
-
+            
             const newUser = new User({
                 email,
                 password,
@@ -106,6 +106,7 @@ app.post("/login", async(req,res) => {
                 emailToken: crypto.randomBytes(64).toString('hex'),
                 isVerified: false
             })
+            console.log("1");
             console.log("The success part " + newUser);
 
             const token = await newUser.generateAuthUser();
@@ -119,13 +120,13 @@ app.post("/login", async(req,res) => {
 
             var mailOptions = {
                 from: ' "kjai4101@gmail.com',
-                to: 'kunaljain4753@gmail.com',
+                to: email,
                 subject: 'kunaljain -verify your email',
                 text: `<h2> ! Thanks for registerating with our NGO</h2>
                         <h4> Please verify your mail to continue...</h4>
                         <a href=""http://${req.headers.host}/verify-email?token=${newUser.emailToken}">Verify your Email</a>`
             };
-            console.log("hii");
+
             // sending mail
             transporter.sendMail(mailOptions, function(error, info){
                 if(error) {
@@ -148,16 +149,19 @@ app.post("/login", async(req,res) => {
 app.get('/verify-email', async(req,res) => {
     try {
         const token = req.query.token;
-        const user = await User.findOne({ emailToken : token})
-        if(user) {
-            user.emailToken = null
-            user.isVerified = true
-            await user.save()
-            res.redirect('login')
-        }
-        else {
-            res.redirect('login')
-        }
+        User.updateMany(
+            {emailToken : token},
+            {emailToken : null,
+            isVerified : true},
+            function(error, result) {
+                if(error) {
+                    res.json({
+                        status: false
+                    })
+                }
+                res.render('login')
+            }
+        )
     } catch (error) {
         console.log(error);
     }
