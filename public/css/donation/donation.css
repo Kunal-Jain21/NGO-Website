@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
 
 *{
     box-sizing: border-box;
@@ -112,6 +113,18 @@ div {
     width: 50%;
 }
 
+#form-heading {
+    color: #004e7e;
+    font-family: 'Zilla Slab', serif;
+    font-size: x-large;
+}
+
+.form-info {
+    color: brown;
+    font-family: 'Slabo 27px', serif;
+    font-size: larger;
+}
+
 @media only screen and (max-width: 769px) {
     .main-container .container {
         display: block;
@@ -150,7 +163,10 @@ div {
 
 
 
-
+#proceed:hover {
+    background-color: #004e7e;
+    color: #fff;
+}
 
 
 
@@ -177,10 +193,14 @@ div {
 
 .donationlist li p {
     padding-left: 22px;
+    font-family: 'Slabo 27px', serif;
+    font-size: large;
 }
 
 .donationlist .radiobox {
-    font-size: 16px;
+    font-size: larger;
+    font-weight: 600;
+    font-family: 'Oxygen', sans-serif;
 }
 
 .donationlist li p {
@@ -192,13 +212,7 @@ div {
 }
 
 
-
-
-
-
-
-
-
-
-
-
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}

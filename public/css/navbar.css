@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
 
 header{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 25px 10%;
-    background-color: #000;
+    background-color: #e4701d;
 }
 
 header .home {
@@ -33,17 +34,16 @@ header .home {
     text-decoration: none;
     border-radius: 10px;
     color: white;
-    
+    font-family: 'Zilla Slab', serif;
+    font-size: x-large;
 }
 
 .nav_bar li a:hover{
-    background-color: #0088a9;
+    background-color: #fba704;
 }
 
 li a button{
-    font-family:"sans-serif";
     font-weight: 500;
-    font-size: 16px;
     color: #edf0f1;
     text-decoration: none;
 }
@@ -52,10 +52,13 @@ button{
     margin-left: 20px;
     padding: 9px 25px;
     background-color: rgba(0,136,169,1);
+    color: #fff;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    font-family: 'Zilla Slab', serif;
+    font-size: x-large;
 }
 
 button:hover {

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login/style.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
-
+    
     <div class="wrapper">
         <div class="title-text">
             <div class="title login">Login Form</div>
@@ -26,14 +27,13 @@
             <div class="form-inner">
                 <form action="/index" method="POST" class="login">
                     <div class="field">
-                        <input type="text" name="email" placeholder="Email Address" id="" required>
+                        <input type="text" name="email" placeholder="Email Address" id="login-email" required>
                     </div>
                     <div class="field">
-                        <input type="password" name="password" placeholder="Password" id="" required>
+                        <input type="password" name="password" placeholder="Password" id="login-pass" required>
                     </div>
-                    <div class="pass-link"> <a href="#">Forgot password?</a> </div>
                     <div class="field">
-                        <input type="submit" value="Login">
+                        <input type="submit" value="Login" id="form-login">
                     </div>
                     <div class="signup-link">Not a member? <a href="#">Signup now</a> </div>
                 </form>
@@ -42,6 +42,7 @@
                 <form action="/login" method="POST" class="signup">
                     <div class="field">
                         <input type="text" name="email" placeholder="Email Address" id="" required>
+                        <span id="showmsg"></span>
                     </div>
                     <div class="field">
                         <input type="password" name="password" placeholder="Password" id="" required>
@@ -50,7 +51,7 @@
                         <input type="password" name="cpassword" placeholder="Confirm password" id="" required>
                     </div>
                     <div class="field">
-                        <input type="submit" value="Signup">
+                        <input type="submit" value="Signup" id="form-signup">
                     </div>
                 </form>
             </div>

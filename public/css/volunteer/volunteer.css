@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
 
 *{
     box-sizing: border-box;
@@ -12,7 +15,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-li, a, button {
+li a button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -31,10 +34,14 @@ li, a, button {
 
 .form{
     min-width: 20%;
-    margin-left: 5px;
+    margin-left: 2rem;
     margin-right: 10px;
     padding: 5px;
     border: 2px solid black;
+}
+
+#heading {
+    color: #e4701d;
 }
 
 input,textarea{
@@ -45,44 +52,79 @@ input,textarea{
 
 .form p{
     padding: 5px;
-    font-family: sans-serif;
+    font-family: 'Slabo 27px', serif;
+    font-size: larger;
 }
 
 .form h2{
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Zilla Slab', serif;
+    font-size: x-large;
+}
+
+#form-submit {
+    background-color: #e4701d;
+    font-size: larger;
+}
+
+#form-submit:hover {
+    background-color: #004e7e;
+    color: #fff;
 }
 
 .before_content{
     margin-top: 2%;
-    padding-left: 10%;
+    margin-left: 5rem;
+    color: #004e7e;
+    font-family: 'Zilla Slab', serif;
+    font-size: xx-large;
 }
+
 .ngo_info{
     margin-top: 5px;
+    margin-left: 5rem;
     padding-top: 5px;
-    font-family: sans-serif;
+    text-align: justify;
+    color: brown;
+    font-family: 'Slabo 27px', serif;
     font-size: larger;
 }
 
 .after_content{
     text-align: center;
+    color: #004e7e;
+    font-family: 'Zilla Slab', serif;
+    font-size: xx-large;
 }
 
 /*      Volunteer Details       */
 
 .volunteer_details{
     display: flex;
+    justify-content: center;
+    width: 90%;
     padding: 2% 0px;
+    margin: auto;
 } 
 
- .cards{
-    padding: 5px;
-    border: 2px solid black;
-    margin: 0.5%;
-    text-align: center;
-    font-family: sans-serif;
-    min-width: 15%;
+.vol_name {
+    font-family: 'Zilla Slab', serif;
+    font-size: x-large;
+}
 
+.cards{
+    padding: 5px;
+    margin: 0.8%;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    width: 25%;
+}
+
+.cards p {
+    padding: 5px;
+    font-family: 'Slabo 27px', serif;
+    font-size: larger;
 }
 
 .person_img{
@@ -93,14 +135,19 @@ input,textarea{
 
 
 .social_platform{
-    width: 30px;
+    width: 35px;
     padding: 2px;
 }
 
 
 
+.volunteer-name {
+    color: #004e7e;
+}
 
-
+.volunteer-info {
+    color: brown;
+}
 
 
 

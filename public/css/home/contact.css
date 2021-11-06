@@ -10,9 +10,9 @@ section{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #fff38e;
+    background: #e4701d;
 }
-
+/* #e4701d */
 section::before{
     /* content: ''; */
     position: absolute;
@@ -20,7 +20,7 @@ section::before{
     left: 0;
     width: 50%;
     height: 100%;
-    background: #fff38e;  
+    background: #e4701d;  
 }
 .block{
     position: relative;
@@ -73,22 +73,8 @@ section::before{
     margin-left: 10px;
     font-weight: 300;
 }
-.block .containerInfo ul.sci{
-    position: relative;
-    display: flex;
-    padding-top: 50px;
-}
-.block .containerInfo ul.sci li{
-    list-style: none;
-    margin: 15px;
-}
-.block .containerInfo ul.sci li a{
-    text-decoration: none;
-}
-.block .blockInfo ul.sci li a img{
-    filter: invert(1);
-    width: 40px;
-}
+
+
 .block .contactForm{
     position: absolute;
     padding: 70px 50px;
@@ -199,7 +185,7 @@ section::before{
 @media (max-width : 991px)
 {
     section{
-        background: #fff38e;
+        background: #e4701d;
     }
     section::before{
         display: none;

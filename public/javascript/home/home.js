@@ -7,7 +7,7 @@ counters.forEach((counter) =>{
         const targetCount = +counter.getAttribute("data-target");
 
         const startingCount = Number(counter.innerHTML);
-        const incr = targetCount/100;
+        const incr = targetCount/50;
 
         if(startingCount < targetCount){
             counter.innerHTML = `${Math.round(startingCount + incr)}`;
